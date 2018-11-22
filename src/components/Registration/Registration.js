@@ -56,7 +56,7 @@ class Registration extends React.Component{
 
   onRegisterSubmit = () => {
     console.log(this.state);
-    fetch('https://warm-bayou-58598.herokuapp.com/register', {
+    fetch('https://shielded-fortress-55781.herokuapp.com/register', {
       method: 'post',
       headers: {'content-type' : 'application/json'},
       body: JSON.stringify({
@@ -73,7 +73,7 @@ class Registration extends React.Component{
           this.props.onRouteChange('home');
         }
     })
-    .catch(console.log);
+    .catch(err => res.status(404).json('registration uncolete') );
   }
 
 
@@ -122,34 +122,6 @@ class Registration extends React.Component{
     );
   }
 }
-
-
-// const Registration = ({onRouteChange}) => {
-//   return(
-//     <RegistrationFrom>
-//         <section>
-//           <div>
-//               <h3>Registration Form</h3>
-//               <div>
-//                 <input type='text' name='name' placeholder="Name" />
-//               </div>
-//               <div>
-//                 <input type='email' name='email' placeholder="Email Address" />
-//               </div>
-//               <div>
-//                 <input type='password' name='password'  placeholder="Password"/>
-//               </div>
-//               <div>
-//                 <button>Submit</button>
-//               </div>
-//               <div>
-//                 <p onClick={()=>onRouteChange('signin')}>Sign In</p>
-//               </div>
-//           </div>
-//         </section>
-//     </RegistrationFrom>
-//   );
-// }
 
 
 export default Registration;

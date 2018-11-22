@@ -103,7 +103,7 @@ class App extends Component {
   onImageSubmit = () => {
     console.log('click button', this.state.user.id, this.state.input);
     this.setState({imageUrl: this.state.input});
-      fetch('https://warm-bayou-58598.herokuapp.com/imageUrl', {
+      fetch('https://shielded-fortress-55781.herokuapp.com/imageUrl', {
         method: 'post',
         header: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -113,7 +113,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://warm-bayou-58598.herokuapp.com:5000/image', {
+          fetch('https://shielded-fortress-55781.herokuapp.com:5000/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
