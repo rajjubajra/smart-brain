@@ -73,7 +73,7 @@ class Registration extends React.Component{
           this.props.onRouteChange('home');
         }
     })
-    .catch(err => res.status(404).json('registration uncolete') );
+    .catch( err => console.log('post error: ',err));
   }
 
 
